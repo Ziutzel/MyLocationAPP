@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vo3-tr-tei">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyLocationApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lME-Bh-FOh">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lME-Bh-FOh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SQ0-st-Jeh"/>
+                            <constraint firstAttribute="bottom" secondItem="lME-Bh-FOh" secondAttribute="bottom" id="fTN-0s-HVy"/>
+                            <constraint firstItem="lME-Bh-FOh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hGZ-6A-npu"/>
+                            <constraint firstItem="lME-Bh-FOh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="q1c-dg-sjb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QmD-E6-TkX">
+                        <barButtonItem key="leftBarButtonItem" title="Coordenadas" id="6Nd-7J-IXf">
+                            <color key="tintColor" red="0.72297602319999998" green="0.30972621700000003" blue="0.91916561129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="coordenadas:" destination="BYZ-38-t0r" id="nJM-2e-5AB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="zoom" id="Nb9-HB-BKQ">
+                            <color key="tintColor" red="0.72297602319999998" green="0.30972621700000003" blue="0.91916561129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="zoomMapa:" destination="BYZ-38-t0r" id="9Og-75-UUQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapa" destination="lME-Bh-FOh" id="0hu-wq-vLd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="-2.1126760563380285"/>
+        </scene>
+        <!--Buscar-->
+        <scene sceneID="sTF-CS-5F4">
+            <objects>
+                <viewController storyboardIdentifier="BusquedaLugarViewController" id="w3H-HU-bAR" customClass="BusquedaLugarViewController" customModule="MyLocationApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qnp-ZZ-XZS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O3h-vK-v6T">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escribe el lugar a buscar.." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xHY-eE-U12">
+                                <rect key="frame" x="20" y="79" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pfb-8X-Bb9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uEY-MA-nF2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" red="0.72297602319999998" green="0.30972621700000003" blue="0.91916561129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="xHY-eE-U12" firstAttribute="leading" secondItem="uEY-MA-nF2" secondAttribute="leading" constant="20" id="20e-gw-5Dv"/>
+                            <constraint firstItem="O3h-vK-v6T" firstAttribute="trailing" secondItem="uEY-MA-nF2" secondAttribute="trailing" id="Jia-g9-Ros"/>
+                            <constraint firstItem="O3h-vK-v6T" firstAttribute="leading" secondItem="uEY-MA-nF2" secondAttribute="leading" id="Rfi-2g-kwz"/>
+                            <constraint firstItem="uEY-MA-nF2" firstAttribute="trailing" secondItem="xHY-eE-U12" secondAttribute="trailing" constant="20" id="cao-x4-Ij8"/>
+                            <constraint firstAttribute="bottom" secondItem="O3h-vK-v6T" secondAttribute="bottom" id="eOE-oi-CO0"/>
+                            <constraint firstItem="xHY-eE-U12" firstAttribute="top" secondItem="uEY-MA-nF2" secondAttribute="top" constant="20" id="qeu-Hu-eEQ"/>
+                            <constraint firstItem="O3h-vK-v6T" firstAttribute="top" secondItem="qnp-ZZ-XZS" secondAttribute="top" id="uHx-Ub-z2o"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Buscar" id="lLN-y9-RSf">
+                        <imageReference key="image" image="magnifyingglass.circle" catalog="system" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color red="0.74464209930000003" green="0.2356382192" blue="0.91916561129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color red="0.74464209930000003" green="0.2356382192" blue="0.91916561129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color systemColor="tertiaryLabelColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                        <color key="badgeColor" red="0.74464209929464165" green="0.23563821918012409" blue="0.91916561129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="busquedaLugar" destination="xHY-eE-U12" id="w2b-5l-bza"/>
+                        <outlet property="mapa" destination="O3h-vK-v6T" id="p0R-Se-MlJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0wq-wy-ntQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2626.7175572519081" y="5.6338028169014089"/>
+        </scene>
+        <!--Ruta-->
+        <scene sceneID="sV0-mr-0eY">
+            <objects>
+                <viewController id="B3X-sV-jcV" customClass="RutaViewController" customModule="MyLocationApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Htk-OQ-d6C">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cp9-qK-NKw">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="¿A dónde quieres viajar?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Olz-re-eaW">
+                                <rect key="frame" x="20" y="79" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="tLd-qH-HHm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="awB-Ea-Lxp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Olz-re-eaW" firstAttribute="leading" secondItem="awB-Ea-Lxp" secondAttribute="leading" constant="20" id="GqP-Jv-4I2"/>
+                            <constraint firstItem="cp9-qK-NKw" firstAttribute="leading" secondItem="awB-Ea-Lxp" secondAttribute="leading" id="V4q-kf-QEq"/>
+                            <constraint firstItem="cp9-qK-NKw" firstAttribute="top" secondItem="Htk-OQ-d6C" secondAttribute="top" id="aNa-tw-qvG"/>
+                            <constraint firstItem="Olz-re-eaW" firstAttribute="top" secondItem="awB-Ea-Lxp" secondAttribute="top" constant="20" id="k2T-E8-mNl"/>
+                            <constraint firstItem="awB-Ea-Lxp" firstAttribute="trailing" secondItem="Olz-re-eaW" secondAttribute="trailing" constant="20" id="kvz-gQ-k9R"/>
+                            <constraint firstAttribute="bottom" secondItem="cp9-qK-NKw" secondAttribute="bottom" id="mqd-bs-lLG"/>
+                            <constraint firstItem="cp9-qK-NKw" firstAttribute="trailing" secondItem="awB-Ea-Lxp" secondAttribute="trailing" id="wU4-pz-9WA"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Ruta" id="86S-NR-832">
+                        <imageReference key="image" image="figure.walk.motion" catalog="system" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color red="0.72297602319999998" green="0.30972621700000003" blue="0.91916561129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color red="0.72297602319999998" green="0.30972621700000003" blue="0.91916561129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color systemColor="systemGray5Color"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="destinoTextField" destination="Olz-re-eaW" id="t9V-fP-i73"/>
+                        <outlet property="mapa" destination="cp9-qK-NKw" id="cKu-Cp-Isg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7UQ-wJ-jgt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3339.6946564885493" y="5.6338028169014089"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Bbh-bx-MSo">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Vo3-tr-tei" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7P3-xw-rKU">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemPinkColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="2Ha-o3-6gd" kind="relationship" relationship="viewControllers" id="q22-AF-E2v"/>
+                        <segue destination="w3H-HU-bAR" kind="relationship" relationship="viewControllers" id="1uO-J7-6YR"/>
+                        <segue destination="B3X-sV-jcV" kind="relationship" relationship="viewControllers" id="RsY-77-VZ1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OVT-22-ZPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+        </scene>
+        <!--Locación-->
+        <scene sceneID="8l2-vy-sqb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Ha-o3-6gd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Locación" id="3de-0Z-F4j" colorLabel="IBBuiltInLabel-Red">
+                        <imageReference key="image" image="mappin" catalog="system" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color red="0.72297602319999998" green="0.30972621700000003" blue="0.91916561129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color red="0.72297602319999998" green="0.30972621700000003" blue="0.91916561129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color red="0.72297602319999998" green="0.30972621700000003" blue="0.91916561129999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                        <color key="badgeColor" systemColor="systemPinkColor"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="1"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xqN-f9-L4l">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UYZ-Az-e68"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dbs-C0-Bvj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="figure.walk.motion" catalog="system" width="128" height="112"/>
+        <image name="magnifyingglass.circle" catalog="system" width="128" height="123"/>
+        <image name="mappin" catalog="system" width="106" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
